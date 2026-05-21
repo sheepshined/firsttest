@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install *)",
+      "Bash(python *)",
+      "Read(//c/Users/Lenovo/.claude/**)",
+      "Read(//c/Users/Lenovo/hiagent/py-review-agent/.claude/**)",
+      "Bash(chmod +x *)"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "python -c \"import sys,json; d=json.load(sys.stdin); c=d.get('context_window',{}); i=c.get('total_input_tokens',0); s=c.get('context_window_size',200000); p=c.get('used_percentage'); print(f'Context: {i:,} / {s:,} tokens ({p:.1f}%)') if p is not None else print(f'Context: {i:,} / {s:,} tokens')\""
+  }
+}
